@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Insert title here</title>
+</head>
+<body>
+
+
+
+<div class="loader-container hidden" th:fragment="loader" id="loader">
+    <div class="loader"></div>
+</div>
+
+<div class="alert alert-danger alert-dismissible " id="alert" th:fragment="alert">
+    <i class="fa fa-check-circle hidden success-icon"></i>
+    <i class="fa fa-times-circle  error-icon"></i>
+    <span id="alert_message"></span>
+</div>
+
+
+
+</body>
+</html>

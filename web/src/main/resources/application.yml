@@ -1,0 +1,59 @@
+# spring
+spring:
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/web_db
+    username: root
+    password:
+  # liquibase
+  liquibase:
+    enabled: true
+    change-log: classpath:/liquibase/db-changelog-master.xml
+    drop-first: false
+  jpa:
+    properties:
+      hibernate:
+        open-in-view: false # disable this anti pattern
+#        show_sql: true
+#        format_sql: true
+#    show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 200MB
+      max-request-size: 200MB
+  jackson:
+    date-format: yyyy/MM/dd HH:mm
+  mvc:
+    favicon:
+      enabled: true
+  main:
+    allow-bean-definition-overriding: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username:
+    password:
+    properties:
+      mail.smtp.starttls.enable: true
+
+# Application config
+application:
+  enable-security: true # be careful when use this config
+
+# Task
+cron-job:
+  daily-update-data:
+    time: 0 0 7 * * ? # 7h00AM
+
+# Email
+email:
+  receiver: ngocnd@rabiloo.com.vn
+  
+server:
+  servlet:
+    session:
+      timeout: 1d
+  port: 8081
+
+
+

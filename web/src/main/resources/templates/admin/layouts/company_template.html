@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:layout="https://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title layout:title-pattern="$CONTENT_TITLE"></title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport"/>
+    <link href="/admin/libs/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet"/>
+    <link th:href="@{/admin/libs/bootstrap4/css/bootstrap.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/admin/custom/css/component.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/admin/custom/css/header.css}" rel="stylesheet" media="screen"/>
+    <link th:href="@{/admin/custom/css/left_menu.css}" rel="stylesheet" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="admin/custom/css/new_datatable.css"/>
+
+`   <script type="text/javascript" src="/admin/libs/jQuery/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="/admin/libs/jQuery/jquery.validate.js"></script>
+    <script src="/admin/libs/jQuery/messages_ja.js" type="text/javascript"></script>
+    <script src="/admin/libs/vuejs/vue.min.js"></script>
+    <script type="text/javascript" src="/admin/custom/js/vue_util_component.js"></script>
+    <script type="text/javascript" src="/admin/custom/js/uploader_component.js"></script>
+    <script src="/admin/libs/bootstrap4/js/tether.js" type="text/javascript"></script>
+    <script src="/admin/libs/bootstrap4/js/popper.js" type="text/javascript"></script>
+    <script src="/admin/libs/bootstrap4/js/bootstrap.js" type="text/javascript"></script>
+    <script src="/admin/libs/momentjs/moment.min.js" type="text/javascript"></script>
+    <script src="/admin/custom/js/component.js" type="text/javascript"></script>
+    <script src="/admin/custom/js/left_menu.js" type="text/javascript"></script>
+    <script src="/admin/custom/js/logout.js" type="text/javascript"></script>
+    <script src="/admin/custom/js/public_app.js" type="text/javascript"></script>
+    <th:block layout:fragment="style"></th:block>
+
+
+
+</head>
+<body>
+<div th:replace="admin/components :: loader"></div>
+
+<div th:replace="admin/components :: alert"></div>
+<header th:replace="admin/layouts/header :: header('company',${currentPage})">
+</header>
+<div class="left-menu left-menu-active">
+    <div class="header-left-menu clearfix">
+        <span id="icon_menu">
+         		<i class="fa fa-arrow-left fa-2x menu-des"></i>
+         		<i class="fa fa-arrow-right fa-2x menu-des d-none"></i>
+    	 </span>
+    </div>
+    <div class="body-left-menu">
+        <div class="block-menu block-company-menu">
+            <div class="control-block-menu"><i class="fa fa-server icon-active"></i><span style="font-size: 12px">アプリ選択</span><i class="fa fa-angle-double-down block-icon"></i></div>
+            <a th:href="@{'/manager/home'}"><div th:class=" ${currentPage} == 'home' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-home"></i><span>Manage Home</span></div></a>
+            <a th:href="@{'/manager/about'}"><div th:class=" ${currentPage} == 'about' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-info"></i><span>Manage About</span></div></a>
+            <a th:href="@{'/manager/team'}"><div th:class=" ${currentPage} == 'team' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-apple"></i><span>Manage Team</span></div></a>
+            <a th:href="@{'/manager/news'}"><div th:class=" ${currentPage} == 'news' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-list-alt"></i><span>Manage News</span></div></a>
+            <a th:href="@{'/manager/appointment'}"><div th:class=" ${currentPage} == 'appointment' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-list-alt"></i><span>Manage Appointment</span></div></a>
+            <a th:href="@{'/manager/map'}"><div th:class=" ${currentPage} == 'map' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-list-alt"></i><span>Manage Map</span></div></a>
+
+        </div>
+    </div>
+</div>
+<section class="page-content" layout:fragment="content">
+</section>
+
+<th:block th:fragment="page-scripts">
+
+</th:block>
+</body>
+</html>
