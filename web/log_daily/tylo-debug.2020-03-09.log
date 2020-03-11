@@ -349,3 +349,7 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [admin
 2020:03:09 19:12:39.967 [http-nio-8081-exec-8] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(187) - Finished Spring Data repository scanning in 18ms. Found 0 JPA repository interfaces. 
 2020:03:09 19:15:21.970 [http-nio-8081-exec-6] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(127) - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
 2020:03:09 19:15:21.979 [http-nio-8081-exec-6] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(187) - Finished Spring Data repository scanning in 7ms. Found 0 JPA repository interfaces. 
+2020:03:09 20:41:04.208 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown(208) - Shutting down ExecutorService 'applicationTaskExecutor' 
+2020:03:09 20:41:04.220 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy(598) - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2020:03:09 20:41:04.236 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close(350) - HikariPool-1 - Shutdown initiated... 
+2020:03:09 20:41:04.257 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close(352) - HikariPool-1 - Shutdown completed. 
