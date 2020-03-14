@@ -8,5 +8,7 @@
 	<include file="liquibase/header/header.xml"/>
 	<include file="liquibase/user/user.xml"/>
 	<include file="liquibase/user/data.xml"/>
+	<include file="liquibase/about/about.xml"/>
+
 
 </databaseChangeLog>

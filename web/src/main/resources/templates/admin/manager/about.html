@@ -3,13 +3,28 @@
       layout:decorate="~{admin/layouts/company_template}" th:with="currentPage='about'">
 <head>
     <title>About Manage</title>
-
+    <script src="/admin/custom/js/about.js"></script>
 
 </head>
 <body>
 
 <div layout:fragment="content">
-    <p>This is content</p>
+    <form>
+        <div class="form-group">
+            <label for="id">id</label>
+            <input type="text" class="form-control" id="id" placeholder="id">
+        </div>
+        <div class="form-group">
+            <label for="title_id">Title</label>
+            <input type="text" class="form-control" id="title_id" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="description_id">Description</label>
+            <input type="text" class="form-control" id="description_id" placeholder="Password">
+        </div>
+        <button type="button" class="btn btn-primary" id="submit">Submit</button>
+    </form>
 </div>
 </body>
 

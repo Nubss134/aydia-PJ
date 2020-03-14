@@ -2,7 +2,7 @@
 spring:
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/web_db
+    url: jdbc:mysql://localhost:3306/web_db?serverTimezone=Asia/Tokyo&useLegacyDatetimeCode=false&useUnicode=yes&characterEncoding=UTF-8&rewriteBatchedStatements=true
     username: root
     password:
   # liquibase
@@ -13,6 +13,7 @@ spring:
   jpa:
     properties:
       hibernate:
+ #       use-new-id-generator-mappings: true
         open-in-view: false # disable this anti pattern
 #        show_sql: true
 #        format_sql: true
