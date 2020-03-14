@@ -1,16 +1,18 @@
 $(document).ready(function(){
 
-//    function getID () {
-//        $.ajax({
-//            url:"/api/v1/about/getAll",
-//            type: "GET",
-//            success: function(result) {
-//                $('#id').val(result[0].id)
-//            }
-//        })
-//    }
-//
-//    getID();
+    function getData () {
+        $.ajax({
+            url:"/api/v1/about/getAll",
+            type: "GET",
+            success: function(result) {
+                $("#id").val(result[0].id)
+                $("#title_id").val(result[0].title)
+                $("#description_id").val(result[0].description)
+            }
+        })
+    }
+
+    getData();
 
     $("#submit").click(function(){
         let title = $("#title_id").val();

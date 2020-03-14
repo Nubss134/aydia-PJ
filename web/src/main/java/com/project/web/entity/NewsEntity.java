@@ -8,11 +8,10 @@ import java.util.Date;
 public class NewsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
-
     private Date createdTime;
     private Date updatedTime;
     private Boolean isDeleted;

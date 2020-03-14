@@ -5,6 +5,9 @@ import com.project.web.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/api/v1/news")
 public class NewsAPI {
@@ -12,9 +15,13 @@ public class NewsAPI {
     private NewsService service;
 
 
-    @GetMapping("/get")
-    public NewsEntity getAll() {
-        return service.get();
+    @GetMapping("/get/{id}")
+    public Optional<NewsEntity> get(Long id){
+        return service.get(id);
+    }
+    @GetMapping("/getAll")
+    public List<NewsEntity> getAll() {
+        return service.getAll();
     }
 
     @PostMapping("/saveOrUpdate")
@@ -22,5 +29,10 @@ public class NewsAPI {
         return service.saveOrUpdate(entity);
     }
 
+    @PostMapping("/delete/{id}")
+    public String String (Long id){
+        service.delete(id);
+        return "success";
+    }
 
 }
