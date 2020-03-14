@@ -5,6 +5,9 @@ import com.project.web.repository.HeaderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.Optional;
+
 @Service
 
 public class HeaderService {
@@ -12,9 +15,19 @@ public class HeaderService {
     @Autowired
     private HeaderRepository repository;
 
-    public void save(HeaderEntity headerEntity) {
+    public void saveOrUpdate(HeaderEntity headerEntity) {
         repository.save(headerEntity);
     }
+
+    public HeaderEntity get() {
+        List<HeaderEntity> list =  repository.findAll();
+        if(list.isEmpty()) {
+            return null;
+        }
+        return list.get(0);
+    }
+
+
 
 
 

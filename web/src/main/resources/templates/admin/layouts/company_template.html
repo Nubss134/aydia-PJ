@@ -48,6 +48,7 @@
     <div class="body-left-menu">
         <div class="block-menu block-company-menu">
             <div class="control-block-menu"><i class="fa fa-server icon-active"></i><span style="font-size: 12px">アプリ選択</span><i class="fa fa-angle-double-down block-icon"></i></div>
+            <a th:href="@{'/manager/header'}"><div th:class=" ${currentPage} == 'header' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-home"></i><span>Manage Header</span></div></a>
             <a th:href="@{'/manager/home'}"><div th:class=" ${currentPage} == 'home' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-home"></i><span>Manage Home</span></div></a>
             <a th:href="@{'/manager/about'}"><div th:class=" ${currentPage} == 'about' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-info"></i><span>Manage About</span></div></a>
             <a th:href="@{'/manager/team'}"><div th:class=" ${currentPage} == 'team' ?  'menu active-menu' : 'menu not-active-menu' "><i class="fa fa-apple"></i><span>Manage Team</span></div></a>

@@ -5,20 +5,18 @@ import com.project.web.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 
 @Service
 public class NewsService {
     @Autowired
     private NewsRepository repository;
 
-    public List<NewsEntity> findByTitle(String title) {
-        return repository.findByTitle(title);
+    public NewsEntity get() {
+        return repository.findById(1L).get();
     }
 
-    public List<NewsEntity> findAll() {
-        return repository.findAll();
+    public NewsEntity saveOrUpdate(NewsEntity entity) {
+        return repository.save(entity);
     }
-
 
 }
