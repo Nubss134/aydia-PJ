@@ -3,7 +3,11 @@ package com.project.web.web.api;
 import com.project.web.entity.NewsEntity;
 import com.project.web.service.NewsService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
+import org.thymeleaf.spring5.processor.SpringUErrorsTagProcessor;
 
 import java.util.List;
 import java.util.Optional;
@@ -11,28 +15,28 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/v1/news")
 public class NewsAPI {
-    @Autowired
+   @Autowired
     private NewsService service;
 
+   @PostMapping("/saveOrUpdate")
+    public void save(@RequestBody NewsEntity entity){
+       service.saveOrUpdate(entity);
+   }
 
-    @GetMapping("/get/{id}")
-    public Optional<NewsEntity> get(Long id){
-        return service.get(id);
-    }
-    @GetMapping("/getAll")
-    public List<NewsEntity> getAll() {
-        return service.getAll();
-    }
+   @GetMapping("/getList")
+    public Page<NewsEntity> getList(@RequestParam int page,
+                                    @RequestParam int size){
+       Pageable pageable = PageRequest.of(page-1, size);
+       return service.getList(pageable);
+   }
 
-    @PostMapping("/saveOrUpdate")
-    public NewsEntity saveOrUpdate(@RequestBody NewsEntity entity)  {
-        return service.saveOrUpdate(entity);
-    }
+   @GetMapping("/get")
+    public Optional<NewsEntity> get(@RequestParam Long id){
+       return service.findById(id);
+   }
 
-    @PostMapping("/delete/{id}")
-    public String String (Long id){
+   @PostMapping("/delete")
+    public void delete(@RequestParam Long id){
         service.delete(id);
-        return "success";
-    }
-
+   }
 }

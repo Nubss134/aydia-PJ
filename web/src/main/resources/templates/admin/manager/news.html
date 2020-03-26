@@ -3,24 +3,91 @@
       layout:decorate="~{admin/layouts/company_template}" th:with="currentPage='news'">
 <head>
     <title>News Manage</title>
+    <link rel="stylesheet" type="text/css" href="/admin/libs/new_data_table/css/dataTables.bootstrap4.css"/>
+    <link rel="stylesheet" type="text/css" href="/admin/custom/css/new_datatable.css"/>
+    <script src="/admin/libs/new_data_table/js/jquery.dataTables.js"></script>
+    <script src="/admin/libs/new_data_table/js/dataTables.bootstrap4.min.js"></script>
     <script src="/admin/custom/js/news.js"></script>
-
 </head>
 <body>
 
 <div layout:fragment="content">
-    <form>
-        <div class="form-group">
-            <label for="news_title">Title</label>
-            <input type="text" class="form-control" id="news_title" aria-describedby="emailHelp" placeholder="New title">
-            <small id="emailHelp" class="form-text text-muted"></small>
+    <button id="0" class="btn btn-primary btn-sm btn-detail" style="float: right;" data-toggle="modal" data-target="#newsModal">Add</button>
+    <table id="news_table" class="table responsive">
+        <thead>
+        <tr>
+            <td>Image</td>
+            <td>Title</td>
+            <td>Description</td>
+            <td style="width: 10%">Action</td>
+        </tr>
+        </thead>
+    </table>
+
+    <!-- New Modal -->
+    <div class="modal" id="newsModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!--Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">NEWS</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <form id="news_form">
+                        <input class="hidden" id="id"/>
+                        <div class="form-group">
+                            <label for="title">Title</label>
+                            <input type="text" class="form-control" placeholder="" id="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" rows="3"></textarea>
+                        </div>
+                    </form>
+
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm btn-submit" data-dismiss="modal">Submit</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
         </div>
-        <div class="form-group">
-            <label for="news_description">Description</label>
-            <input type="text" class="form-control" id="news_description" placeholder="New description">
+    </div>
+
+
+    <!-- Delete Modal -->
+    <div class="modal" id="deleteModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <h4 class="modal-title">News</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Are you sure want to delete ??
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary btn-sm btn-confirm-delete" data-dismiss="modal">Delete</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                </div>
+
+            </div>
         </div>
-        <button type="button" class="btn btn-primary" id="submit">Submit</button>
-    </form>
+    </div>
+
 </div>
 </body>
 

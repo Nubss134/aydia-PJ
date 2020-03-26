@@ -92,8 +92,6 @@ $(document).ready(function () {
                 window.alert.show("error","Thất bại",2000)
             }
         })
-
-
     })
 
     $(document).on("click",".btn-delete",function () {
