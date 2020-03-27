@@ -81,3 +81,7 @@
 2020:03:18 21:10:49.206 [http-nio-8081-exec-7] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(187) - Finished Spring Data repository scanning in 6ms. Found 0 JPA repository interfaces. 
 2020:03:18 21:10:59.478 [http-nio-8081-exec-4] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(127) - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
 2020:03:18 21:10:59.492 [http-nio-8081-exec-4] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(187) - Finished Spring Data repository scanning in 13ms. Found 0 JPA repository interfaces. 
+2020:03:18 21:14:54.068 [SpringContextShutdownHook] INFO  o.s.s.c.ThreadPoolTaskExecutor.shutdown(208) - Shutting down ExecutorService 'applicationTaskExecutor' 
+2020:03:18 21:14:54.088 [SpringContextShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy(598) - Closing JPA EntityManagerFactory for persistence unit 'default' 
+2020:03:18 21:14:54.117 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close(350) - HikariPool-1 - Shutdown initiated... 
+2020:03:18 21:14:54.162 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource.close(352) - HikariPool-1 - Shutdown completed. 

@@ -15,6 +15,7 @@ $(document).ready(function () {
                 [10, 20, 50],
                 [10, 20, 50]
             ],
+            searching: false,
             serverSide: true,
             columns: columnDefinitions,
             ajax: function (requestParams, callback) {
@@ -38,6 +39,15 @@ $(document).ready(function () {
                 {
                     "render": function (data) {
 
+                        return '<img src="'+data+'"/>';
+
+                    },
+
+                    "targets": 0
+                },
+                {
+                    "render": function (data) {
+
                         return '<button id="'+data.id+'" class="btn-responsive btn btn-sm btn-primary btn-detail" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#teamModal">' +
                             'Detail</button>' +
                             '<button id="'+data.id+'" class="btn-responsive btn btn-danger btn-sm btn-delete" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#deleteModal">' +
@@ -52,10 +62,16 @@ $(document).ready(function () {
 
 
     $(document).on("click",".btn-detail",function () {
+
+        $('#name_help').html("");
+        $('#position_help').html("");
+        $('#detail_help').html("");
+        $('#image_help').html("");
+
         let id = $(this).attr("id");
         if(id == 0) {
+            $('#image_preview').addClass('hidden');
             $('#team_form')[0].reset();
-
         }
         else {
             $.ajax({
@@ -66,6 +82,9 @@ $(document).ready(function () {
                     $('#name').val(data.name);
                     $('#position').val(data.position);
                     $('#detail').val(data.detail);
+                    $('#url_image').val(data.image);
+                    $('#image_preview').attr('src',data.image);
+                    $('#image_preview').removeClass('hidden');
                 }
             })
         }
@@ -74,10 +93,12 @@ $(document).ready(function () {
 
     $(document).on("click",".btn-submit",function () {
         let team = {}
-        team.id = $('#id').val();
-        team.name = $('#name').val();
-        team.position = $('#position').val();
-        team.detail = $('#detail').val();
+        $('#team_form').serializeArray().forEach(function(item) {
+            team[item.name] = item.value;
+        });
+        if(!validate(team)) {
+            return;
+        }
 
         $.ajax({
             url: '/api/v1/team/saveOrUpdate',
@@ -86,7 +107,7 @@ $(document).ready(function () {
             data: JSON.stringify(team),
             success: function () {
                 window.alert.show("success","Thành công",2000);
-                table.ajax.reload()
+                location.reload();
             },
             error: function () {
                 window.alert.show("error","Thất bại",2000)
@@ -95,6 +116,37 @@ $(document).ready(function () {
 
 
     })
+
+    function validate(team) {
+        if(team.name === '') {
+            $('#name_help').html("Please enter name");
+            return false;
+        } else {
+            $('#name_help').html("");
+        }
+
+        if(team.position === '') {
+            $('#position_help').html("Please enter position");
+            return false;
+        } else {
+            $('#position_help').html("");
+
+        }
+        if(team.detail === '') {
+            $('#detail_help').html("Please enter detail");
+            return false;
+        } else {
+            $('#detail_help').html("");
+
+        }
+        if(team.image === '') {
+            $('#image_help').html("Please choose image");
+            return false;
+        } else {
+            $('#image_help').html("");
+        }
+        return true;
+    }
 
     $(document).on("click",".btn-delete",function () {
         let id = $(this).attr("id");
@@ -112,6 +164,25 @@ $(document).ready(function () {
             })
         })
 
+    })
+
+    $('#image').change(function () {
+        let formData = new FormData();
+        let file = $('#image')[0].files[0];
+        formData.append('file',file);
+        $.ajax({
+            url: '/api/v1/upload',
+            type: 'POST',
+            contentType: false,
+            processData: false,
+            data: formData,
+            success: function (res) {
+                $('#url_image').val(res);
+                $('#image_preview').attr('src',res);
+                $('#image_preview').removeClass('hidden');
+            }
+
+        })
     })
 
 });

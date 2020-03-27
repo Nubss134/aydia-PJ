@@ -12,6 +12,7 @@ public interface TeamRepository extends JpaRepository<TeamEntity,Long> {
 
     Page<TeamEntity> findByIsDeleted(Boolean isDeleted, Pageable pageable);
 
+    Page<TeamEntity> findByName(String name,Pageable pageable);
 
 
 
