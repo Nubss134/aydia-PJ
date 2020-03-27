@@ -14,7 +14,4 @@ public interface TeamRepository extends JpaRepository<TeamEntity,Long> {
 
     Page<TeamEntity> findByName(String name,Pageable pageable);
 
-
-
-
 }

@@ -113,8 +113,6 @@ $(document).ready(function () {
                 window.alert.show("error","Thất bại",2000)
             }
         })
-
-
     })
 
     function validate(team) {

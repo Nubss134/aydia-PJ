@@ -8,11 +8,11 @@ import java.util.Date;
 public class NewsEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
-
+    private String image;
     private Date createdTime;
     private Date updatedTime;
     private Boolean isDeleted;
@@ -39,6 +39,14 @@ public class NewsEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 
     public Date getCreatedTime() {

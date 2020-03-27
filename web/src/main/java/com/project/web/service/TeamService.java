@@ -32,7 +32,6 @@ public class TeamService {
         entity.setDeleted(false);
         repository.save(entity);
 
-
     }
 
 
