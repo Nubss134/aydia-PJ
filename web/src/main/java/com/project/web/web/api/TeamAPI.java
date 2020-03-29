@@ -8,6 +8,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -27,6 +28,12 @@ public class TeamAPI {
         Pageable pageable = PageRequest.of(page-1,size);
         return service.getList(pageable);
     }
+
+    @GetMapping("/getListForGuest")
+    public List<TeamEntity> getList() {
+        return service.getListForGuest();
+    }
+
 
 
     @GetMapping("/get")

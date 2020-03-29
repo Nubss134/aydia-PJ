@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -19,6 +20,10 @@ public class TeamService {
 
     public Page<TeamEntity> getList(Pageable pageable) {
         return repository.findByIsDeleted(false,pageable);
+    }
+
+    public List<TeamEntity> getListForGuest() {
+        return repository.findByIsDeleted(false);
     }
 
     public void saveOrUpdate(TeamEntity entity) {
