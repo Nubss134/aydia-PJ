@@ -50,7 +50,7 @@ $(document).ready(function () {
                 loop:true,
                 autoplay:true,
                 nav: true,
-                navText: ["xx","yy"]
+                navText: ["前","次"]
             })
 
         }

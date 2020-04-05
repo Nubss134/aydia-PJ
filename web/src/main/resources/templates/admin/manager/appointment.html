@@ -2,14 +2,33 @@
       xmlns:th="https://www.thymeleaf.org"
       layout:decorate="~{admin/layouts/company_template}" th:with="currentPage='appointment'">
 <head>
-    <title>Appointment Manage</title>
+    <title>Contact Manage</title>
+    <link rel="stylesheet" type="text/css" href="/admin/libs/new_data_table/css/dataTables.bootstrap4.css"/>
+    <link rel="stylesheet" type="text/css" href="/admin/custom/css/new_datatable.css"/>
+    <script src="/admin/libs/new_data_table/js/jquery.dataTables.js"></script>
+    <script src="/admin/libs/new_data_table/js/dataTables.bootstrap4.min.js"></script>
 
+    <script src="/admin/custom/js/contact.js"></script>
 
 </head>
 <body>
 
 <div layout:fragment="content">
-    <p>This is content</p>
+
+    <div class="table">
+        <table class="responsive" id="table_contact">
+            <thead>
+                <tr>
+                    <td>Subject</td>
+                    <td>Name</td>
+                    <td>Email</td>
+                    <td>Tel</td>
+                    <td>Time</td>
+                    <td></td>
+                </tr>
+            </thead>
+        </table>
+    </div>
 </div>
 </body>
 

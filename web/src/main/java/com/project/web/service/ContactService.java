@@ -1,7 +1,7 @@
 package com.project.web.service;
 
 import com.project.web.entity.ContactEntity;
-import com.project.web.repository.specs.ContactRepository;
+import com.project.web.repository.ContactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +33,7 @@ public class ContactService {
         entity.setCreatedTime(new Date());
         entity.setDeleted(false);
         entity.setSeen(false);
+        repository.save(entity);
     }
 
 }

@@ -1,4 +1,4 @@
-package com.project.web.repository.specs;
+package com.project.web.repository;
 
 import com.project.web.entity.ContactEntity;
 import org.springframework.data.domain.Page;
