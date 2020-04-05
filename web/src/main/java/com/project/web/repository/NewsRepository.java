@@ -24,4 +24,5 @@ public interface NewsRepository extends JpaRepository<NewsEntity,Long> {
 //    void deleteById(Long id);
 
     Page<NewsEntity> findByIsDeleted(Boolean isDeleted, Pageable pageable);
+    List<NewsEntity> findByIsDeleted(Boolean isDeleted);
 }
