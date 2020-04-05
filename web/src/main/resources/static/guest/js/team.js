@@ -18,6 +18,7 @@ $(document).ready(function () {
         url: "/api/v1/team/getListForGuest",
         type: 'GET',
         success: function (res) {
+            console.log("okla")
             let length = res.length;
             let listRender = [];
             for(let i = 0; i < length; i++) {
@@ -50,10 +51,8 @@ $(document).ready(function () {
                 loop:true,
                 autoplay:true,
                 nav: true,
-                navText: ["xx","yy"]
+                navText: ["前","次"]
             })
-
         }
-
     })
 })

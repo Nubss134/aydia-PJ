@@ -93,8 +93,12 @@ $(document).ready(function () {
 
     $(document).on("click",".btn-submit",function () {
         let team = {}
+        console.log($('#team_form').serializeArray())
         $('#team_form').serializeArray().forEach(function(item) {
             team[item.name] = item.value;
+//            console.log(item.name);
+//            console.log(item.value);
+
         });
         if(!validate(team)) {
             return;

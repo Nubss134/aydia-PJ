@@ -37,7 +37,9 @@ public class NewsService {
         return repository.findById(id);
     }
 
-
+    public List<NewsEntity> getListForGuest(){
+        return repository.findByIsDeleted(false);
+    }
 
     public void delete(Long id){
         NewsEntity entity = findById(id).orElse(new NewsEntity());
