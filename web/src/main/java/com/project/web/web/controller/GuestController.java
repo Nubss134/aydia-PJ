@@ -11,4 +11,9 @@ public class GuestController {
         return "guest/index";
     }
 
+    @GetMapping("/detail")
+    public String guestDetail() {
+        return "guest/detail";
+    }
+
 }
