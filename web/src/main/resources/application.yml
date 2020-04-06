@@ -36,6 +36,8 @@ spring:
     password:
     properties:
       mail.smtp.starttls.enable: true
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.web.ErrorMvcAutoConfiguration
 
 # Application config
 application:
@@ -55,6 +57,9 @@ server:
     session:
       timeout: 1d
   port: 8081
+  error:
+    whitelabel:
+      enabled: false
 
 
 

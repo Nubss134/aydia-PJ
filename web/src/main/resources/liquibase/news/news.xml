@@ -11,7 +11,8 @@
 
 
             <column name="title" type="varchar(500)"/>
-            <column name="description" type="text"/>
+            <column name="description" type="varchar(500)"/>
+            <column name="content" type="text"/>
             <column name="image" type="varchar(500)"/>
             <column name="created_time" type="TIMESTAMP"/>
             <column name="updated_time" type="TIMESTAMP"/>

@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+    var contentEditor = CKEDITOR.replace( 'content' );
     let columnDefinitions = [
         {"data":"image", "defaultContent":"データなし", "class":'text-center'},
         {"data": "title", "defaultContent":"データなし", "class":'text-center'},
@@ -66,6 +66,7 @@ $(document).ready(function(){
 
         $('#title_help').html("");
         $('#description_help').html("");
+        $('#content_help').html("");
         $('#image_help').html("");
 
         let id = $(this).attr("id");
@@ -81,6 +82,7 @@ $(document).ready(function(){
                     $('#id').val(data.id);
                     $('#title').val(data.title);
                     $('#description').val(data.description);
+                    CKEDITOR.instances['content'].setData(data.content);
                     $('#url_image').val(data.image);
                     $('#image_preview').attr('src',data.image);
                     $('#image_preview').removeClass('hidden');
@@ -91,12 +93,10 @@ $(document).ready(function(){
 
     $(document).on("click", ".btn-submit", function(){
         let news = {}
-        console.log("hi")
-        console.log($('#news_form').serializeArray())
         $('#news_form').serializeArray().forEach(function(item){
             news[item.name] = item.value;
         });
-        console.log(news)
+        news.content = CKEDITOR.instances['content'].getData();
         if(!validate(news)){
             return;
         }
@@ -108,7 +108,6 @@ $(document).ready(function(){
             data: JSON.stringify(news),
             success: function(){
                 window.alert.show("success", "DONE", 2000);
-//                table.ajax.reload();
                   location.reload();
             },
             error: function(){
@@ -132,6 +131,13 @@ $(document).ready(function(){
         }
         else{
             $('#description_help').html("");
+        }
+        if(news.content === ''){
+            $('#content_help').html("Please enter content");
+            return false;
+        }
+        else{
+            $('#content_help').html("");
         }
         if(news.image ===''){
             $('#image_help').html("Please choose image");

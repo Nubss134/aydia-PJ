@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/admin/custom/css/new_datatable.css"/>
     <script src="/admin/libs/new_data_table/js/jquery.dataTables.js"></script>
     <script src="/admin/libs/new_data_table/js/dataTables.bootstrap4.min.js"></script>
+    <script src="/admin/libs/ckeditor/ckeditor.js"></script>
     <script src="/admin/custom/js/news.js"></script>
     <style>
         .text-muted {
@@ -32,7 +33,7 @@
 
     <!-- New Modal -->
     <div class="modal" id="newsModal">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
 
                 <!--Modal Header -->
@@ -50,10 +51,17 @@
                             <input type="text" class="form-control" placeholder="" id="title" name="title">
                             <small class="form-text text-muted" id="title_help" style="color: red"></small>
                         </div>
+
                         <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea class="form-control" id="description" rows="3" name="description"></textarea>
-                            <small  class="form-text text-muted" id="description_help"></small>
+                            <label for="title">Description</label>
+                            <input type="text" class="form-control" placeholder="" id="description" name="description">
+                            <small class="form-text text-muted" id="description_help" style="color: red"></small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Content</label>
+                            <textarea class="form-control" id="content" rows="3" name="content"></textarea>
+                            <small  class="form-text text-muted" id="content_help"></small>
                         </div>
                         <div class="form-group">
                             <label >Image</label>

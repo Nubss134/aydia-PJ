@@ -92,13 +92,9 @@ $(document).ready(function () {
     });
 
     $(document).on("click",".btn-submit",function () {
-        let team = {}
-        console.log($('#team_form').serializeArray())
+        let team = {};
         $('#team_form').serializeArray().forEach(function(item) {
             team[item.name] = item.value;
-//            console.log(item.name);
-//            console.log(item.value);
-
         });
         if(!validate(team)) {
             return;
@@ -117,7 +113,7 @@ $(document).ready(function () {
                 window.alert.show("error","Thất bại",2000)
             }
         })
-    })
+    });
 
     function validate(team) {
         if(team.name === '') {
@@ -166,7 +162,7 @@ $(document).ready(function () {
             })
         })
 
-    })
+    });
 
     $('#image').change(function () {
         let formData = new FormData();

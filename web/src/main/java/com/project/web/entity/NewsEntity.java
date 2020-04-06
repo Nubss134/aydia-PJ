@@ -12,10 +12,19 @@ public class NewsEntity {
     private Long id;
     private String title;
     private String description;
+    private String content;
     private String image;
     private Date createdTime;
     private Date updatedTime;
     private Boolean isDeleted;
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 
     public Long getId() {
         return id;
