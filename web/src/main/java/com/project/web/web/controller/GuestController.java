@@ -22,4 +22,9 @@ public class GuestController {
         return "guest/components/news_detail";
     }
 
+    @GetMapping("/detail/business")
+    public String guestBusinessSummaryDetail(){
+        return "guest/components/business";
+    }
+
 }

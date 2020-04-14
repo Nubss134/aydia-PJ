@@ -5,9 +5,10 @@ $(document).ready(function(){
             url:"/api/v1/about/getAll",
             type: "GET",
             success: function(result) {
-                $("#id").val(result[0].id)
-                $("#title_id").val(result[0].title)
-                $("#description_id").val(result[0].description)
+            console.log(result);
+                $("#id").val(result[0].id);
+                $("#title_id").val(result[0].title);
+                $("#description_id").val(result[0].description);
             }
         })
     }

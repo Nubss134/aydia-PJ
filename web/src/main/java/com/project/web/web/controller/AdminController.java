@@ -26,6 +26,11 @@ public class AdminController {
         return "admin/manager/about";
     }
 
+    @GetMapping("/business")
+    public String business() {
+        return "admin/manager/business";
+    }
+
     @GetMapping("/team")
     public String team() {
         return "admin/manager/team";

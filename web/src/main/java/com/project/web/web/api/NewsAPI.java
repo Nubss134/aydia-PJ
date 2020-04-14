@@ -46,4 +46,9 @@ public class NewsAPI {
     public void delete(@RequestParam Long id){
         service.delete(id);
    }
+
+   @GetMapping("/getListRecent")
+    public List<NewsEntity> getListRecent(@RequestParam Long id){
+       return service.getListRecent(id);
+   }
 }
