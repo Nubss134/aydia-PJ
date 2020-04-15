@@ -1,10 +1,10 @@
 $(document).ready(function(){
 
         function renderItem(data) {
-            return '                        <div class="col-md-4 col-sm-6">\n' +
-                '                                <div class="news-thumb wow fadeInUp" data-wow-delay="0.2s">\n' +
+            return '                        <div class="col-md-4 col-sm-6" >\n' +
+                '                                <div class="news-thumb wow fadeInUp" data-wow-delay="0.2s" id="'+data.id+'">\n' +
                 '                                    <img src="'+data.image+'" class="img-responsive" alt="">\n' +
-                '                                    <div class="news-info">\n' +
+                '                                    <div class="news-info" >\n' +
                 '                                        <h3>'+data.title+'</h3>\n' +
                 '                                        <div class="news-contact-info">\n' +
                 '                                            <p>'+data.description+'</p>\n' +
@@ -52,4 +52,11 @@ $(document).ready(function(){
                 })
             }
         })
+
+
+    $(document).on('click', '.news-thumb', function(){
+        let id = $(this).attr("id");
+        window.location.href = "http://localhost:8081/detail/news/?id="+id ;
+    });
+
 })

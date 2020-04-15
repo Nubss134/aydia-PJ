@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="Tooplate">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="/guest/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/guest/css/magnific-popup.css">
+
+    <link rel="stylesheet" href="/guest/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/guest/css/animate.css">
+
+    <link rel="stylesheet" href="/guest/css/owl.carousel.css">
+    <link rel="stylesheet" href="/guest/css/owl.theme.default.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="/guest/css/tooplate-style.css">
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script language="JavaScript" type="text/javascript"  src="/guest/js/newsdetail.js"></script>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+<!-- PRE LOADER -->
+<div th:replace="/guest/components/pre-loader :: pre-loader"></div>
+
+<!-- HEADER -->
+<div th:replace="/guest/components/header :: header"></div>
+
+<!-- MENU -->
+<div th:replace="/guest/components/menu :: menu"></div>
+
+<!-- DETAIL -->
+<section id="news-detail" data-stellar-background-ratio="0.5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8 col-sm-7">
+                <!-- NEWS THUMB -->
+                <div class="news-detail-thumb">
+
+                </div>
+            </div>
+
+            <div class="col-md-4 col-sm-5">
+                <div class="news-sidebar">
+                    <div class="news-author">
+                        <h4 class="title"></h4>
+                        <p id = "description">Lorem ipsum dolor sit amet, maecenas eget vestibulum justo imperdiet, wisi risus purus augue vulputate voluptate neque.</p>
+                    </div>
+
+                    <div class="recent-post">
+                        <h4>Recent Posts</h4>
+
+                        <div class="media" id="media-1">
+                            <div class="media-object pull-left">
+                                <a href="#" ><img src="/guest/images/news-image.jpg" id="recent-img-1" class="img-responsive" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading" id="recent-title-1"><a href="#">Introducing a new healing process</a></h4>
+                            </div>
+                        </div>
+
+                        <div class="media" id="media-2">
+                            <div class="media-object pull-left">
+                                <a href="#" ><img src="/guest/images/news-image.jpg" id="recent-img-2" class="img-responsive" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <h4 class="media-heading" id="recent-title-2"><a href="#">About Amazing Technology</a></h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div th:replace="/guest/components/footer :: footer"></div>
+
+<script src="/guest/js/jquery.js"></script>
+<script src="/guest/js/bootstrap.min.js"></script>
+<script src="/guest/js/jquery.sticky.js"></script>
+<script src="/guest/js/jquery.stellar.min.js"></script>
+<script src="/guest/js/jquery.magnific-popup.min.js"></script>
+<script src="/guest/js/magnific-popup-options.js"></script>
+<script src="/guest/js/wow.min.js"></script>
+<script src="/guest/js/smoothscroll.js"></script>
+<script src="/guest/js/owl.carousel.min.js"></script>
+<script src="/guest/js/custom.js"></script>
+
+</body>
+</html>

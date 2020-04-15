@@ -41,10 +41,15 @@ public class NewsService {
         return repository.findByIsDeleted(false);
     }
 
+
     public void delete(Long id){
         NewsEntity entity = findById(id).orElse(new NewsEntity());
         entity.setDeleted(true);
         repository.save(entity);
+    }
+
+    public List<NewsEntity> getListRecent(Long id){
+        return repository.findRecent(id);
     }
 
 }
