@@ -13,10 +13,6 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<UserEntity,Long> {
 
-    Page<UserEntity> findAll(Specification<UserEntity> specs, Pageable pageable);
-
-    List<UserEntity> findAll(Specification<UserEntity> specs);
-
     UserEntity findUserByUsername(String username);
 
 }
