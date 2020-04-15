@@ -11,7 +11,7 @@ $(document).ready(function () {
 
     ];
 
-    $('#table_contact').DataTable({
+    let table = $('#table_contact').DataTable({
         language: {
             "url": "/admin/libs/new_data_table/js/ja.json"
         },
@@ -43,7 +43,7 @@ $(document).ready(function () {
             {
                 "render": function (data) {
 
-                    return '<button id="'+data.id+'" class="btn-responsive btn btn-sm btn-primary btn-detail" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#teamModal">' +
+                    return '<button id="'+data.id+'" class="btn-responsive btn btn-sm btn-primary btn-detail" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#contactModal">' +
                         'Detail</button>' +
                         '<button id="'+data.id+'" class="btn-responsive btn btn-danger btn-sm btn-delete" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#deleteModal">' +
                         'Delete</button>';
@@ -52,6 +52,29 @@ $(document).ready(function () {
 
                 "targets": 5
             }
-        ]
+        ],
+        "createdRow": function (nRow, aData) {
+            if(!aData.seen) {
+                $(nRow).css({'font-weight': 'bold'});
+            }
+        }
     });
+
+    $(document).on('click','.btn-detail',function () {
+        window.loader.show();
+        let id = $(this).attr('id');
+        $.ajax({
+            url: '/api/v1/contact/'+id,
+            type: 'GET',
+            success: function (contact) {
+                table.ajax.reload();
+                $('.subject').html(contact.sub);
+                $('.name').html(contact.name);
+                $('.email').html(contact.email);
+                $('.time').html(contact.createdTime);
+                $('.message').html(contact.message);
+                window.loader.hide();
+            }
+        })
+    })
 })

@@ -16,130 +16,6 @@ function initCKEditor(element) {
     ];
 }
 
-$.validator.addMethod("phoneNumber", function (value, element, arg) {
-    var phoneNumber = value.trim();
-    for (var i = 0; i < phoneNumber.length; i++) {
-        if (!$.isNumeric(phoneNumber[i]) && phoneNumber[i] != ")" && phoneNumber[i] != "(" && phoneNumber[i] != " " && phoneNumber[i] != "-")
-            return false;
-    }
-    return true;
-}, "無効な電話番号");
-$.validator.addMethod("postalCode", function (value, element, arg) {
-    var postalCode = value.trim();
-    if (/^(?:[0-9]{3}-[0-9]{4})$/.test(postalCode)) {
-        return true;
-    }
-    return false;
-}, "郵便番号のフォマートは XXX-XXXX　です。");
-$.validator.addMethod("valueNotGreaterThan", function (value, element, arg) {
-    return value < arg.val();
-}, "営業開始時間は営業終了時間より早くしてください。");
-
-$.validator.addMethod("dateValidate", function (value, element, arg) {
-    return value < moment(arg.val()).format("YYYY/MM/DD HH:mm");
-}, "開始時間は終了時間 より早くしてください。");
-
-$.validator.addMethod("ckeditorRequired", function (value, element, arg) {
-    return !CKEDITOR.instances[arg].getData() == '';
-}, "このフィールドは必須です。");
-
-//Bỏ validate lengthMax
-$.validator.addMethod("ckeditorMaxLength", function (value, element, arg) {
-    return CKEDITOR.instances[arg].getData().length <= 10000;
-}, "10000 文字以内で入力してください。");
-
-$.validator.addMethod("storeRequired", function (value, element, arg) {
-    for (var i = 0; i < arg.length; i++) {
-        if (arg[i].status === false)
-            return false;
-    }
-    return true;
-}, "");
-
-$.validator.addMethod("catalogRequired", function (value, element, arg) {
-    for (var i = 0; i < arg.length; i++) {
-        if (arg[i].valid === false)
-            return false;
-    }
-    return true;
-}, "");
-
-$.validator.addMethod("youtubeLink", function (value, element, arg) {
-
-    if (value != undefined || value != '') {
-        var regExp = /(https:\/\/www.youtube.com\/watch\?v=)([^#\&\?]*).*/;
-        var match = value.match(regExp);
-        if (match) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
-
-}, "Youtubeリンクを入力してください。");
-
-$.validator.addMethod("linkIncludeHTTP", function (value, element, arg) {
-    if (value != undefined || value != '') {
-        var regExp = /((http|https):\/\/)([^#\&\?]*).*/;
-        var match = value.match(regExp);
-        if (match) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
-}, "HTTP/HTTPSを含むリンクを入力してください。");
-
-
-function validateUrl(el) {
-    var url = $(el).val();
-
-    if (url != undefined || url != '') {
-        var regExp = /((http|https):\/\/)([^#\&\?]*).*/;
-        var match = url.match(regExp);
-        if (match) {
-            return true;
-        } else {
-            return false;
-        }
-    } else {
-        return false;
-    }
-}
-
-function validateInput(el) {
-    var name = $(el).val();
-    if (name != '') {
-        return true;
-    } else {
-
-        return false;
-    }
-}
-
-function validateLengthURL(el) {
-    var name = $(el).val();
-    if (name.length <= 255) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
-
-function validateLengthInputImage(el) {
-    var name = $(el).val();
-    if (name.length <= 100) {
-        return true;
-    } else {
-        return false;
-    }
-}
-
 $(document).ready(function () {
 
     $(document).on('focus', '.form-control', function () {
@@ -162,11 +38,13 @@ $(document).ready(function () {
     window.alert = {
         show: function (type, message, interval) {
             if (type === "error") {
+                console.log('error')
                 $("#alert").removeClass("alert-success");
                 $("#alert").addClass("alert-danger");
                 $("#alert .error-icon").removeClass("hidden");
                 $("#alert .success-icon").addClass("hidden");
             } else if (type === "success") {
+                console.log('success')
                 $("#alert").removeClass("alert-danger");
                 $("#alert").addClass("alert-success");
                 $("#alert .error-icon").addClass("hidden");
@@ -185,6 +63,7 @@ $(document).ready(function () {
             }, interval);
         }
     };
+
 
     window.loader = {
         show: function () {

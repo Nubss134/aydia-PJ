@@ -9,6 +9,22 @@
     <script src="/admin/libs/new_data_table/js/dataTables.bootstrap4.min.js"></script>
 
     <script src="/admin/custom/js/contact.js"></script>
+    <style>
+        .info{
+            font-size: 12px;
+        }
+        .name {
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .time {
+            float: right;
+        }
+        .message {
+            margin-top: 10px;
+        }
+
+    </style>
 
 </head>
 <body>
@@ -29,6 +45,29 @@
             </thead>
         </table>
     </div>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h2 class="subject">Subject</h2>
+                    <hr>
+                    <div class="info">
+                        <span style="font-weight: bold"></span>
+                        <span class="name" ></span>
+                        <span class="email"></span>
+                        <span class="time" ></span>
+                    </div>
+                    <div class="message"></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 </div>
 </body>
 
