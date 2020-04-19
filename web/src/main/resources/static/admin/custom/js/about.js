@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+   var contentEditor = CKEDITOR.replace( 'description' );
+
     function getData () {
         $.ajax({
             url:"/api/v1/about/getAll",
@@ -7,8 +9,9 @@ $(document).ready(function(){
             success: function(result) {
             console.log(result);
                 $("#id").val(result[0].id);
-                $("#title_id").val(result[0].title);
-                $("#description_id").val(result[0].description);
+                $("#title").val(result[0].title);
+                CKEDITOR.instances['description'].setData(result[0].description);
+
             }
         })
     }
@@ -16,13 +19,10 @@ $(document).ready(function(){
     getData();
 
     $("#submit").click(function(){
-        let title = $("#title_id").val();
-        let description = $("#description_id").val();
-        let data = {
 
-        }
-        data.title = title;
-        data.description = description;
+        let data = { }
+        data.title = $("#title").val();
+        data.description = CKEDITOR.instances['description'].getData();
         $.ajax({
             url:"/api/v1/about/getAll",
             type: "GET",
