@@ -203,7 +203,32 @@ http://www.tooplate.com/view/2098-health
     padding: 0;
   }
 
+.alert {
+  position: fixed;
+  width: 350px;
+  top: -100px;
+  right: 25px;
+  z-index: 10000;
+  display: flex;
+}
 
+/*ALERT*/
+
+.alert .fa {
+  font-size: 20px;
+}
+.alert .success-icon {
+  color: #3c763d !important;
+}
+
+.alert .error-icon {
+  color: red !important;
+}
+
+.alert span {
+  font-size: 14px;
+  margin-left: 15px;
+}
   /*---------------------------------------
        PRE LOADER              
   -----------------------------------------*/

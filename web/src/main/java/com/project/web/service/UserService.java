@@ -2,7 +2,6 @@ package com.project.web.service;
 
 import com.project.web.entity.UserEntity;
 import com.project.web.repository.UserRepository;
-import com.project.web.repository.specs.UserSpecs;
 import com.project.web.request.UserFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,9 +29,5 @@ public class UserService  {
 	}
 
 
-	public Page<UserEntity> filter(UserFilter filter, Pageable page) {
-		LOGGER.info("Filter");
-		return repository.findAll(UserSpecs.getUsers(filter), page);
-	}
 
 }

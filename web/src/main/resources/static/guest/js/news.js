@@ -18,7 +18,6 @@ $(document).ready(function(){
             url: "/api/v1/news/getListForGuest1",
             type: 'GET',
             success: function(res){
-                console.log("ok")
                 let length = res.length;
                 let listRender = [];
                 for(let i = 0; i < length; i++) {
@@ -39,7 +38,6 @@ $(document).ready(function(){
                     }
                     listRender.push(item);
                 }
-                console.log(listRender.join(''))
                 $('#list_news').html('<div class="owl-carousel owl-theme" >' +
                                             listRender.join('') +
                                      '</div>');

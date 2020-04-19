@@ -21,10 +21,8 @@ public class ContactService {
 
     public Optional<ContactEntity> findById(Long id) {
         Optional<ContactEntity> contactOp = repository.findById(id);
-
-        if(contactOp.isPresent()) {
-            contactOp.get().setSeen(true);
-        }
+        contactOp.get().setSeen(true);
+        repository.save(contactOp.get());
         return contactOp;
 
     }
