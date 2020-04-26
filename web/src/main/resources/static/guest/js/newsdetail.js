@@ -18,13 +18,12 @@ $(document).ready(function(){
         return response.json();
     })
     .then((data) => {
-        console.log(data[0]);
-        console.log(data[1]);
         document.getElementById("recent-img-1").setAttribute("src", data[0].image);
         document.getElementById("recent-title-1").innerHTML = data[0].title;
+        document.getElementById("a-1").setAttribute("href", "http://localhost:8081/detail/news/?id="+data[0].id );
         document.getElementById("recent-img-2").setAttribute("src", data[1].image);
         document.getElementById("recent-title-2").innerHTML = data[1].title;
+        document.getElementById("a-2").setAttribute("href", "http://localhost:8081/detail/news/?id="+data[1].id );
     });
-
 
 })

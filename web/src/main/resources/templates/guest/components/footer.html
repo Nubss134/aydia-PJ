@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Footer</title>
+
 </head>
 <body>
     <div th:fragment="footer">
@@ -12,7 +13,7 @@
 
                     <div class="col-md-4 col-sm-4">
                         <div class="footer-thumb">
-                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                            <h4 class="wow fadeInUp" data-wow-delay="0.4s"><strong>連絡先</strong></h4>
                             <p>Fusce at libero iaculis, venenatis augue quis, pharetra lorem. Curabitur ut dolor eu elit consequat ultricies.</p>
 
                             <div class="contact-info">
@@ -24,33 +25,36 @@
 
                     <div class="col-md-4 col-sm-4">
                         <div class="footer-thumb">
-                            <h4 class="wow fadeInUp" data-wow-delay="0.4s">Latest News</h4>
+                            <h4 class="wow fadeInUp" data-wow-delay="0.4s"><strong>ニュース</strong></h4>
                             <div class="latest-stories">
                                 <div class="stories-image">
-                                    <a href="#"><img src="guest/images/news-image.jpg" class="img-responsive" alt=""></a>
+                                    <a href="#"><img src="guest/images/news-image.jpg" class="img-responsive" id="img-responsive-1" alt=""></a>
                                 </div>
                                 <div class="stories-info">
-                                    <a href="#"><h5>Amazing Technology</h5></a>
-                                    <span>March 08, 2018</span>
+                                    <a href="#"><h5 id="stories-info-1">Amazing Technology</h5></a>
+                                    <span id="date-1">March 08, 2018</span>
                                 </div>
                             </div>
 
                             <div class="latest-stories">
                                 <div class="stories-image">
-                                    <a href="#"><img src="guest/images/news-image.jpg" class="img-responsive" alt=""></a>
+                                    <a href="#"><img src="guest/images/news-image.jpg" class="img-responsive" id="img-responsive-2" alt=""></a>
                                 </div>
                                 <div class="stories-info">
-                                    <a href="#"><h5>New Healing Process</h5></a>
-                                    <span>February 20, 2018</span>
+                                    <a href="#"><h5 id="stories-info-2">New Healing Process</h5></a>
+                                    <span id="date-2">February 20, 2018</span>
                                 </div>
                             </div>
+
+
+
                         </div>
                     </div>
 
                     <div class="col-md-4 col-sm-4">
                         <div class="footer-thumb">
                             <div class="opening-hours">
-                                <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
+                                <h4 class="wow fadeInUp" data-wow-delay="0.4s">勤務時間</h4>
                                 <p>Monday - Friday <span>06:00 AM - 10:00 PM</span></p>
                                 <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
                                 <p>Sunday <span>Closed</span></p>
@@ -67,17 +71,15 @@
                     <div class="col-md-12 col-sm-12 border-top">
                         <div class="col-md-4 col-sm-6">
                             <div class="copyright-text">
-                                <p>Copyright &copy; 2018 Your Company
-
-                                    | Design: Tooplate</p>
+                                <p>Copyright(C) 2015 AYDIA All Rights Reserved.</p>
                             </div>
                         </div>
                         <div class="col-md-6 col-sm-6">
                             <div class="footer-link">
-                                <a href="#">Laboratory Tests</a>
-                                <a href="#">Departments</a>
-                                <a href="#">Insurance Policy</a>
-                                <a href="#">Careers</a>
+                                <a href="/">Home</a>
+                                <a href="#team"><strong>団体概要</strong></a>
+                                <a href="#news"><strong>ニュース</strong></a>
+                                <a href="#appointment"><strong>お問合せ</strong></a>
                             </div>
                         </div>
                         <div class="col-md-2 col-sm-2 text-align-center">
@@ -90,6 +92,7 @@
                 </div>
             </div>
         </footer>
+        <script language="JavaScript" type="text/javascript"  src="/guest/js/footer.js"></script>
     </div>
 </body>
 </html>
