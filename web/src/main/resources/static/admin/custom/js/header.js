@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+
     $.ajax({
         url: '/api/v1/header/get',
         type: 'GET',
@@ -9,12 +11,17 @@ $(document).ready(function () {
             $('#phone').val(res.phone);
             $('#work_time').val(res.workTime);
             $('#email').val(res.email);
+            $('#title_help').html("");
+            $('#phone_help').html("");
+            $('#work_time_help').html("");
+            $('#email_help').html("");
         }
 
     })
 
 
     $('#submit').click(function () {
+
         let id = $('#id').val();
         let title = $('#title').val();
         let phone = $('#phone').val();
@@ -27,6 +34,10 @@ $(document).ready(function () {
         obj.phone = phone;
         obj.workTime = workTime;
         obj.email = email;
+
+         if(!validate(obj)){
+            return;
+         }
 
         $.ajax({
             url: '/api/v1/header/saveOrUpdate',
@@ -42,10 +53,37 @@ $(document).ready(function () {
 
             }
         })
-
-
-
-
-
     })
+
+        function validate(obj){
+            if(obj.title === ''){
+                $('#title_help').html("タイトルを入力してください");
+                return false;
+            }
+            else{
+                $('#title_help').html("");
+            }
+            if(obj.phone === ''){
+                $('#phone_help').html("電話番号を入力してください");
+                return false;
+            }
+            else{
+                $('#phone_help').html("");
+            }
+            if(obj.workTime === ''){
+                $('#work_time_help').html("受付時間を入力してください");
+                return false;
+            }
+            else{
+                $('#work_time_help').html("");
+            }
+            if(obj.email ===''){
+                $('#email_help').html("メールアドレスを入力してください");
+                return false;
+            }
+            else{
+                $('#email_help').html("");
+            }
+            return true;
+        }
 })

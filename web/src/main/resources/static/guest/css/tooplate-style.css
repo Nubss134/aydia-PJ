@@ -476,16 +476,12 @@ http://www.tooplate.com/view/2098-health
     height: 650px;
   }
 
-  .slider .item-first {
+  .slider .item {
     background-image: url(../images/giaoluu.JPG);
   }
 
-  .slider .item-second {
-    background-image: url(../images/soccer.jpg);
-  }
-
- /* .slider .item-third {
-    background-image: url(../images/slider3.jpg);
+/*  .slider .item-first {
+    background-image: url(../upload/358237209cau-noi-ve-thanh-cong-4.jpg);
   }*/
 
 

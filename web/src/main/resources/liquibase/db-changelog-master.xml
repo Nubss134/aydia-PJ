@@ -11,6 +11,8 @@
 	<include file="liquibase/about/about.xml"/>
 	<include file="liquibase/contact/contact.xml"/>
 	<include file="liquibase/business/business.xml"/>
+	<include file="liquibase/home/home.xml"/>
+	<include file="liquibase/googlemap/googlemap.xml"/>
 
 
 

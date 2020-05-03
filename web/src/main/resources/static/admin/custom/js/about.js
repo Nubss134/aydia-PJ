@@ -23,6 +23,9 @@ $(document).ready(function(){
         let data = { }
         data.title = $("#title").val();
         data.description = CKEDITOR.instances['description'].getData();
+        if(!validate(data)){
+            return;
+        }
         $.ajax({
             url:"/api/v1/about/getAll",
             type: "GET",
@@ -44,6 +47,25 @@ $(document).ready(function(){
         })
 
     })
+
+    function validate(obj){
+        if(obj.title === ''){
+            $('#title_help').html("タイトルを入力してください");
+            return false;
+        }
+        else{
+            $('#title_help').html("");
+        }
+
+        if(obj.description === ''){
+            $('#description_help').html("本文を入力してください");
+            return false;
+        }
+        else{
+            $('#description_help').html("");
+        }
+        return true;
+    }
 
 
 })

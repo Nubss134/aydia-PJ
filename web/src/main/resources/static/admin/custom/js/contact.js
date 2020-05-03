@@ -43,10 +43,10 @@ $(document).ready(function () {
             {
                 "render": function (data) {
 
-                    return '<button id="'+data.id+'" class="btn-responsive btn btn-sm btn-primary btn-detail" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#contactModal">' +
-                        'Detail</button>' +
-                        '<button id="'+data.id+'" class="btn-responsive btn btn-danger btn-sm btn-delete" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#deleteModal">' +
-                        'Delete</button>';
+                    return '<button id="'+data.id+'" class="btn-responsive btn btn-sm btn-primary btn-detail" style="font-size: 12px; margin-left:5px; padding: 5px; width: 80px; height: 30px;" data-toggle="modal" data-target="#contactModal">' +
+                        '詳しく見る</button>' +
+                        '<button id="'+data.id+'" class="btn-responsive btn btn-danger btn-sm btn-delete" style="font-size: 12px; margin-left:5px; padding: 5px; width: 80px; height: 30px;　margin-top: 3px;" data-toggle="modal" data-target="#deleteModal">' +
+                        '削除</button>';
 
                 },
 
