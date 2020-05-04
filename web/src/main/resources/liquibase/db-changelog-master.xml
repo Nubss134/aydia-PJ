@@ -11,7 +11,7 @@
 	<include file="liquibase/about/about.xml"/>
 	<include file="liquibase/contact/contact.xml"/>
 	<include file="liquibase/business/business.xml"/>
-
+	<include file="liquibase/company/company.xml"/>
 
 
 </databaseChangeLog>

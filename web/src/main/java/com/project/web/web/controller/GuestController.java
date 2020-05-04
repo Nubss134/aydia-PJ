@@ -12,7 +12,7 @@ public class GuestController {
         return "guest/index";
     }
 
-    @GetMapping("/detail")
+    @GetMapping("/summary")
     public String guestDetail() {
         return "guest/detail";
     }
@@ -26,5 +26,6 @@ public class GuestController {
     public String guestBusinessSummaryDetail(){
         return "guest/components/business";
     }
+
 
 }

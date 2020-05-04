@@ -20,6 +20,27 @@
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="guest/css/tooplate-style.css">
 
+    <style>
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        table {
+            width: 100%;
+        }
+        table td,
+        table th {
+            border-top: solid 1px #eee;
+            border-bottom: solid 1px #eee;
+            padding: 20px; }
+        table th {
+            font-weight: normal;
+            background: #f4f4f6;
+        }
+
+    </style>
+
 
 
 </head>
@@ -44,11 +65,13 @@
     <!-- TEAM -->
     <div th:replace="guest/components/team :: team"></div>
 
-    <!-- NEWS -->
-    <div th:replace="guest/components/news :: news"></div>
+
 
     <!-- MAKE AN APPOINTMENT -->
     <div th:replace="guest/components/contact :: contact"></div>
+
+    <!-- NEWS -->
+    <div th:replace="guest/components/news :: news"></div>
 
     <!-- GOOGLE MAP -->
     <div th:replace="guest/components/google-map :: google-map"></div>

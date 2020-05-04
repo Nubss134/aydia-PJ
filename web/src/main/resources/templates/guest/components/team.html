@@ -3,22 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Team</title>
+
 </head>
 <body>
     <div th:fragment="team">
-        <section id="team" data-stellar-background-ratio="1">
+        <section id="team" data-stellar-background-ratio="1" style="padding-top: 50px;">
             <div class="container">
                 <div class="row">
-
-                    <div class="col-md-6 col-sm-6">
+                    <div class="col-md-12 col-sm-12">
                         <div class="about-info">
-                            <h2 class="wow fadeInUp" data-wow-delay="0.1s"><strong>賛助会員</strong></h2>
+                            <h2 class="wow fadeInUp text-align-center" data-wow-delay="0.1s"><strong>賛助会員</strong></h2>
                         </div>
                     </div>
-
                     <div class="clearfix"></div>
-                    <div id="list_team">
+                    <div class="outline-box">
+                        <table>
+                            <tbody id="team_body">
+                            <tr>
+                                <th>法人名</th>
+                                <td id="name"></td>
+                            </tr>
+                            <tr>
+                                <th>英字名</th>
+                                <td id="eName"></td>
+                            </tr>
+                            <tr>
+                                <th>代表</th>
+                                <td id="representation"></td>
+                            </tr>
+                            <tr>
+                                <th>設立</th>
+                                <td id="establishment"></td>
+                            </tr>
+                            <tr>
+                                <th>住所</th>
+                                <td id="address"></td>
+                            </tr>
 
+                            </tbody>
+                        </table>
+                        <div class="row text-align-center" style="margin-top: 20px">
+                            <a href="/summary">More</a>
+                        </div>
                     </div>
 
                 </div>

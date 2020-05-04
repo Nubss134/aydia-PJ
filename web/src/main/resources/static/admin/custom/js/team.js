@@ -1,9 +1,9 @@
 $(document).ready(function () {
+    var contentEditor = CKEDITOR.replace( 'detail' );
 
     let columnDefinitions = [
-        {"data": "image", "defaultContent": "データなし", "class": 'text-center'},
         {"data": "name", "defaultContent": "データなし", "class": 'text-center'},
-        {"data": "position", "defaultContent": "データなし", "class": 'text-center'},
+        {"data": "detail", "defaultContent": "データなし", "class": 'text-center'},
         {"data": null, "defaultContent": "データなし", "class": 'text-center'},
     ];
 
@@ -36,15 +36,7 @@ $(document).ready(function () {
                 });
             },
             columnDefs: [
-                {
-                    "render": function (data) {
 
-                        return '<img src="'+data+'"/>';
-
-                    },
-
-                    "targets": 0
-                },
                 {
                     "render": function (data) {
 
@@ -55,7 +47,7 @@ $(document).ready(function () {
 
                     },
 
-                    "targets": 3
+                    "targets": 2
                 }
             ]
         });
@@ -80,11 +72,7 @@ $(document).ready(function () {
                 success: function (data) {
                     $('#id').val(data.id);
                     $('#name').val(data.name);
-                    $('#position').val(data.position);
-                    $('#detail').val(data.detail);
-                    $('#url_image').val(data.image);
-                    $('#image_preview').attr('src',data.image);
-                    $('#image_preview').removeClass('hidden');
+                    CKEDITOR.instances['detail'].setData(data.detail);
                 }
             })
         }
@@ -96,6 +84,9 @@ $(document).ready(function () {
         $('#team_form').serializeArray().forEach(function(item) {
             team[item.name] = item.value;
         });
+        team.detail = CKEDITOR.instances['detail'].getData();
+
+
         if(!validate(team)) {
             return;
         }
@@ -123,13 +114,6 @@ $(document).ready(function () {
             $('#name_help').html("");
         }
 
-        if(team.position === '') {
-            $('#position_help').html("Please enter position");
-            return false;
-        } else {
-            $('#position_help').html("");
-
-        }
         if(team.detail === '') {
             $('#detail_help').html("Please enter detail");
             return false;
@@ -137,12 +121,7 @@ $(document).ready(function () {
             $('#detail_help').html("");
 
         }
-        if(team.image === '') {
-            $('#image_help').html("Please choose image");
-            return false;
-        } else {
-            $('#image_help').html("");
-        }
+
         return true;
     }
 
@@ -164,23 +143,48 @@ $(document).ready(function () {
 
     });
 
-    $('#image').change(function () {
-        let formData = new FormData();
-        let file = $('#image')[0].files[0];
-        formData.append('file',file);
-        $.ajax({
-            url: '/api/v1/upload',
-            type: 'POST',
-            contentType: false,
-            processData: false,
-            data: formData,
-            success: function (res) {
-                $('#url_image').val(res);
-                $('#image_preview').attr('src',res);
-                $('#image_preview').removeClass('hidden');
+    $.ajax({
+        url: '/api/v1/guest/company/get',
+        type: 'GET',
+        success: function (res) {
+            if(res == null) {
+                return
             }
+            $('#company_id').val(res.id)
+            $('#company_name').val(res.name);
+            $('#e_name').val(res.eName);
+            $('#representation').val(res.representation);
+            $('#establishment').val(res.establishment);
+            $('#address').val(res.address);
+        }
+    })
 
+    $('.btn-company').click(function () {
+        let company = {};
+        $('#company_form').serializeArray().forEach(function (item) {
+            company[item.name] = item.value;
+        })
+        $.ajax({
+            url:'/api/v1/admin/company/saveOrUpdate',
+            type:'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(company),
+            success: function () {
+                window.alert.show("success","Thành công",2000);
+                setInterval(function () {
+                    location.reload();
+                },2000)
+            },
+            error: function () {
+                window.alert.show("error","Thất bại",2000)
+            }
         })
     })
+
+
+
+
+
+
 
 });

@@ -527,6 +527,17 @@ http://www.tooplate.com/view/2098-health
       TEAM MEMBERS              
   -----------------------------------------*/
 
+  #team {
+    background: #f9f9f9;
+  }
+
+  .outline-box {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px 100px;
+    background: #fff;
+  }
+
   .team-thumb {
     background-color: #f9f9f9;
     border-radius: 0 0 10px 10px;
@@ -627,7 +638,7 @@ http://www.tooplate.com/view/2098-health
       NEWS             
   -----------------------------------------*/
 
-  #news, #news-detail {
+  #news {
     background: #f9f9f9;
   }
 
