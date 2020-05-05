@@ -4,40 +4,49 @@
 <head>
     <title>Header Manage</title>
     <script src="/admin/custom/js/header.js"></script>
-
+    <style>
+        .text-muted {
+            color: red !important; ;
+        }
+    </style>
 
 </head>
 <body>
 
 <div layout:fragment="content">
     <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <p class="text-align-center">Header Manage</p>
+        <div class="col-1"></div>
+        <div class="col-10">
+            <p class="text-align-center"><b style="font-size:25px">ヘッダー管理</b></p>
             <form>
                 <input id="id" class="hidden"/>
                 <div class="form-group">
-                    <label for="">Title</label>
+                    <label for="">タイトル</label>
                     <input type="text" class="form-control" id="title" aria-describedby="emailHelp" placeholder="">
-                    <small id="emailHelp" class="form-text text-muted"></small>
+<!--                    <small id="emailHelp" class="form-text text-muted"></small>-->
+                    <small class="form-text text-muted" id="title_help" style="color: red"></small>
                 </div>
                 <div class="form-group">
-                    <label for="">Phone</label>
+                    <label for="">電話番号</label>
                     <input type="text" class="form-control" id="phone" placeholder="">
+                    <small class="form-text text-muted" id="phone_help" style="color: red"></small>
                 </div>
                 <div class="form-group">
-                    <label for="">Work Time</label>
+                    <label for="">受付時間</label>
                     <input type="text" class="form-control" id="work_time" placeholder="">
+                    <small class="form-text text-muted" id="work_time_help" style="color: red"></small>
                 </div>
                 <div class="form-group">
-                    <label for="">Email</label>
+                    <label for="">メール</label>
                     <input type="text" class="form-control" id="email" placeholder="">
+                    <small class="form-text text-muted" id="email_help" style="color: red"></small>
                 </div>
 
-                <button type="button" class="btn btn-primary" id="submit">Submit</button>
+                <button type="button" class="btn btn-primary" id="submit">送信</button>
             </form>
         </div>
-        <div class="col-4"></div>
+
+
 
     </div>
 

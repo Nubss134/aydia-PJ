@@ -49,4 +49,9 @@ public class AdminController {
         return "admin/manager/appointment";
     }
 
+    @GetMapping("/changePassword")
+    public String changePassword() {
+        return "admin/manager/change-password";
+    }
+
 }

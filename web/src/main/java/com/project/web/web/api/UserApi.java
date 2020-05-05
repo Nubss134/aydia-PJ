@@ -11,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,6 +20,8 @@ public class UserApi {
     private static Logger LOGGER = LoggerFactory.getLogger(UserApi.class);
     @Autowired
     private UserService service;
+
+
 
 	@GetMapping("/{id}")
 	public ResponseEntity<UserEntity> get(@AuthenticationPrincipal CustomUserDetails currentUser,
@@ -36,6 +39,12 @@ public class UserApi {
 
 		LOGGER.info("User [{}] call api list user", currentUser.getUserId());
 		return service.getLists(PageRequest.of(page - 1, size, Sort.by(sortField)));
+	}
+
+	@GetMapping("/changePassword")
+	public boolean changePassword(@RequestParam String oldPassword, @RequestParam String newPassword, @AuthenticationPrincipal CustomUserDetails customUserDetails) {
+		return service.changePassword(customUserDetails,oldPassword,newPassword);
+
 	}
 
 

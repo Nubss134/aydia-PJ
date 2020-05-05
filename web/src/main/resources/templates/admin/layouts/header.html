@@ -30,7 +30,6 @@
         </a>
         <div class="right-menu">
             <div class="info-user-login">
-                <p>Infor User</p>
 <!--                <div><b th:text="${user.name}"></b><span th:text="' ('+${role}+')'"></span></div>-->
 <!--                <div>-->
 <!--                    <span th:text="'最終ログイン｜'+${year} +'年'+ ${month} +'月'+ ${day} +'日'+ ${hour} +'時'+ ${minute} + '分'"></span>-->
@@ -46,7 +45,7 @@
             font-weight: bold;
             text-align: center;
             position: absolute;
-            right: 50px;
+            right: 0px;
             top: 65px;
             z-index: 100;
         }
@@ -75,21 +74,12 @@
         }
     </style>
     <div class="right-menu-hidden" id="hidden_menu">
-        <div class="title-right-menu" th:text="#{menu}"></div>
-        <a th:if="${statusRole}" href="/system/management/companies">
-            <div class="content-menu-right-menu" style="border-bottom: solid 1px;" th:text="#{listcompany}">
-            </div>
-        </a>
-        <a th:if="${statusRole}" href="/system/management/notification">
-            <div class="content-menu-right-menu" style="border-bottom: solid 1px;" th:text="#{notification}">
-            </div>
-        </a>
-        <a href="/change-password">
-            <div class="content-menu-right-menu" style="border-bottom: solid 1px;" th:text="#{change_password}">
+        <a href="/manager/changePassword">
+            <div class="content-menu-right-menu" style="border-bottom: solid 1px;">Change Password
             </div>
         </a>
         <a href="/logout" id="logoutLink">
-            <div class="content-menu-right-menu" style="border-bottom: solid 1px;" th:text="#{logout}">
+            <div class="content-menu-right-menu" style="border-bottom: solid 1px;">Logout
             </div>
         </a>
     </div>

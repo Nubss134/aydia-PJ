@@ -40,7 +40,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		if(enableSecurity){
 			Logger.info("Enable application security.");
 			http.authorizeRequests()
-					.antMatchers("/swagger-ui.html").hasRole(Role.ADMIN.getName())
+					.antMatchers("/swagger-ui.html").hasAnyRole(Role.ADMIN.getName())
 					.antMatchers("/manager/**").hasAnyRole(Role.ADMIN.getName());
 
 		} else{

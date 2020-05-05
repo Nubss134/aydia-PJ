@@ -19,14 +19,15 @@
 <body>
 
 <div layout:fragment="content">
-    <button id="0" class="btn btn-primary btn-sm btn-detail" style="float: right;" data-toggle="modal" data-target="#newsModal">Add</button>
+    <p class="text-align-center"><b style="font-size:25px">ニュース管理</b></p>
+    <button id="0" class="btn btn-primary btn-sm btn-detail" style="float: right;" data-toggle="modal" data-target="#newsModal">追加</button>
     <table id="news_table" class="table responsive">
         <thead>
         <tr>
-            <td>Image</td>
-            <td>Title</td>
-            <td>Description</td>
-            <td style="width: 10%">Action</td>
+            <td>イメージ</td>
+            <td>タイトル</td>
+            <td>内容</td>
+            <td style="width: 10%"></td>
         </tr>
         </thead>
     </table>
@@ -38,7 +39,7 @@
 
                 <!--Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">NEWS</h4>
+                    <h4 class="modal-title">ニュース</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -47,28 +48,28 @@
                     <form id="news_form">
                         <input class="hidden" name="id" id="id"/>
                         <div class="form-group">
-                            <label for="title">Title</label>
+                            <label for="title">タイトル</label>
                             <input type="text" class="form-control" placeholder="" id="title" name="title">
                             <small class="form-text text-muted" id="title_help" style="color: red"></small>
                         </div>
 
                         <div class="form-group">
-                            <label for="title">Description</label>
+                            <label for="title">形容</label>
                             <input type="text" class="form-control" placeholder="" id="description" name="description">
                             <small class="form-text text-muted" id="description_help" style="color: red"></small>
                         </div>
 
                         <div class="form-group">
-                            <label for="description">Content</label>
+                            <label for="description">本文</label>
                             <textarea class="form-control" id="content" rows="3" name="content"></textarea>
                             <small  class="form-text text-muted" id="content_help"></small>
                         </div>
                         <div class="form-group">
-                            <label >Image</label>
+                            <label >イメージ</label>
                             <div class="input-group">
                                 <div class="custom-file">
                                     <input type="file" class="custom-file-input" id="image" name="file">
-                                    <label class="custom-file-label" for="image">Choose file</label>
+                                    <label class="custom-file-label" for="image">ファイル選択</label>
                                 </div>
                             </div>
                             <small  class="form-text text-muted" ><span id="image_help"></span><img src="" id="image_preview" class="hidden"></small>
@@ -80,8 +81,8 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm btn-submit">Submit</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-submit">送信</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">キャンセル</button>
                 </div>
 
             </div>
@@ -96,19 +97,19 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">News</h4>
+                    <h4 class="modal-title">ニュース</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Are you sure want to delete ??
+                    削除しますか？
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm btn-confirm-delete" data-dismiss="modal">Delete</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-confirm-delete" data-dismiss="modal">削除</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">キャンセル</button>
                 </div>
 
             </div>
