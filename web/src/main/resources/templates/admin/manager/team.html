@@ -25,31 +25,31 @@
         <input class="hidden" name="id" id="company_id">
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="">Name</label>
+                <label for="">法人名</label>
                 <input type="text" class="form-control" id="company_name" name="name" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="">English Name</label>
+                <label for="">英字名</label>
                 <input  class="form-control" id="e_name" name="eName" placeholder="">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="">Representation</label>
+                <label for="">代表</label>
                 <input type="email" class="form-control" id="representation" name="representation" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <label for="">Establishment</label>
+                <label for="">設立</label>
                 <input class="form-control" id="establishment" name="establishment"placeholder="">
             </div>
         </div>
         <div class="form-row">
             <div class="form-group col-md-6">
-                <label for="">Address</label>
+                <label for="">住所</label>
                 <input type="email" class="form-control" id="address" name="address" placeholder="">
             </div>
             <div class="form-group col-md-6">
-                <button type="button" class="btn btn-primary btn-sm btn-company" style="margin-top: 25px">Submit</button>
+                <button type="button" class="btn btn-primary btn-sm btn-company" style="margin-top: 25px">送信</button>
             </div>
         </div>
 
@@ -60,12 +60,12 @@
     <hr style="color: black">
 
 
-    <button id="0" class="btn btn-primary btn-sm btn-detail" style="float: right;" data-toggle="modal" data-target="#teamModal">Add</button>
+    <button id="0" class="btn btn-primary btn-sm btn-detail" style="float: right;" data-toggle="modal" data-target="#teamModal">追加</button>
     <table id="team_table" class="table responsive">
         <thead>
             <tr>
-                <td>Name</td>
-                <td>Detail</td>
+                <td>名前</td>
+                <td>説明</td>
                 <td style="width: 10%"></td>
             </tr>
         </thead>
@@ -79,7 +79,7 @@
 
 <!--                 Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Team</h4>
+                    <h4 class="modal-title">役員及び顧問</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
@@ -88,13 +88,13 @@
                     <form id="team_form">
                         <input class="hidden" id="id" name="id"/>
                         <div class="form-group">
-                            <label for="name">Name</label>
+                            <label for="name">お名前</label>
                             <input type="text" class="form-control" placeholder="" id="name" name="name">
                             <small class="form-text text-muted" id="name_help" style="color: red"></small>
                         </div>
 
                         <div class="form-group">
-                            <label for="detail">Detail</label>
+                            <label for="detail">説明</label>
                             <textarea class="form-control" id="detail" rows="3" name="detail"></textarea>
                             <small  class="form-text text-muted" id="detail_help"></small>
 
@@ -106,8 +106,8 @@
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm btn-submit" >Submit</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-submit" style="width: 80px; height: 30px;" >送信</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" style="width: 80px; height: 30px;">キャンセル</button>
                 </div>
 
             </div>
@@ -121,19 +121,19 @@
 
                 <!-- Modal Header -->
                 <div class="modal-header">
-                    <h4 class="modal-title">Team</h4>
+                    <h4 class="modal-title">役員及び顧問</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
 
                 <!-- Modal body -->
                 <div class="modal-body">
-                    Are you sure want to delete ??
+                    削除しますか？
                 </div>
 
                 <!-- Modal footer -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary btn-sm btn-confirm-delete" data-dismiss="modal">Delete</button>
-                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary btn-sm btn-confirm-delete" data-dismiss="modal" style="width: 80px; height: 30px;">削除</button>
+                    <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal" style="width: 80px; height: 30px;">キャンセル</button>
                 </div>
 
             </div>

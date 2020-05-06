@@ -4,7 +4,7 @@ $(document).ready(function () {
         let newPassword = $('#newPassword').val();
         let repNewPassword = $('#repNewPassword').val();
         if(newPassword != repNewPassword) {
-            $('#rep_password_help').html('Mat khau moi khong khop');
+            $('#rep_password_help').html('新パスワードと再入力パスワードが一致しません');
         }
         else {
             $('#rep_password_help').html('');
@@ -13,10 +13,10 @@ $(document).ready(function () {
                 type: 'GET',
                 success: function (res) {
                     if(res) {
-                        window.alert.show("success","Thành công",2000);
+                        window.alert.show("success","成功",2000);
                     }
                     else {
-                        window.alert.show("error","Mật khẩu cũ không chính xác",2000);
+                        window.alert.show("error","入力したパスワードが正しくありません",2000);
                     }
                 }
             })

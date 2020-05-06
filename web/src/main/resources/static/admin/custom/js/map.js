@@ -27,10 +27,10 @@ $(document).ready(function(){
             data: JSON.stringify(googlemap),
             success: function(){
                 window.location.href = "/manager/map";
-                window.alert.show('success', "thanh cong", 2000);
+                window.alert.show('success', "完成", 2000);
             },
             error: function(){
-                window.alert.show('error', "that bai", 2000);
+                window.alert.show('error', "失敗i", 2000);
             }
 
         })

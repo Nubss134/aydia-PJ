@@ -31,10 +31,10 @@ $(document).ready(function(){
                     contentType:"application/json",
                     data: JSON.stringify(data),
                     success: function(data){
-                        console.log(data);
+                        window.alert.show("success", "完成", 2000);
                     },
                     error: function(){
-                        console.log("loi!!");
+                        window.alert.show("success", "失敗", 2000)
                     }
                 })
             }

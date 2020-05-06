@@ -46,10 +46,10 @@ $(document).ready(function () {
             data: JSON.stringify(obj),
             success: function () {
                 window.location.href = "/manager/header";
-                window.alert.show('success',"Thành công",2000);
+                window.alert.show('success',"完成",2000);
             },
             error: function () {
-                window.alert.show('error',"Thất bại",2000);
+                window.alert.show('error',"失敗",2000);
 
             }
         })

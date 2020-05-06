@@ -40,10 +40,10 @@ $(document).ready(function () {
                 {
                     "render": function (data) {
 
-                        return '<button id="'+data.id+'" class="btn-responsive btn btn-sm btn-primary btn-detail" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#teamModal">' +
-                            'Detail</button>' +
-                            '<button id="'+data.id+'" class="btn-responsive btn btn-danger btn-sm btn-delete" style="font-size: 12px; margin-left:5px; padding: 5px" data-toggle="modal" data-target="#deleteModal">' +
-                            'Delete</button>';
+                        return '<button id="'+data.id+'" class="btn-responsive btn btn-sm btn-primary btn-detail" style="font-size: 12px; margin-left:5px; padding: 5px; width: 80px; height: 30px;" data-toggle="modal" data-target="#teamModal">' +
+                            '詳しく見る</button>' +
+                            '<button id="'+data.id+'" class="btn-responsive btn btn-danger btn-sm btn-delete" style="font-size: 12px; margin-left:5px; padding: 5px; width: 80px; height: 30px;　margin-top: 3px;" data-toggle="modal" data-target="#deleteModal">' +
+                            '削除</button>';
 
                     },
 
@@ -97,25 +97,25 @@ $(document).ready(function () {
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(team),
             success: function () {
-                window.alert.show("success","Thành công",2000);
+                window.alert.show("success","完成",2000);
                 location.reload();
             },
             error: function () {
-                window.alert.show("error","Thất bại",2000)
+                window.alert.show("error","失敗",2000)
             }
         })
     });
 
     function validate(team) {
         if(team.name === '') {
-            $('#name_help').html("Please enter name");
+            $('#name_help').html("お名前を入力してください");
             return false;
         } else {
             $('#name_help').html("");
         }
 
         if(team.detail === '') {
-            $('#detail_help').html("Please enter detail");
+            $('#detail_help').html("説明文を入力してください");
             return false;
         } else {
             $('#detail_help').html("");
@@ -132,11 +132,11 @@ $(document).ready(function () {
                 url: '/api/v1/team/delete?id='+id,
                 type: 'GET',
                 success: function () {
-                    window.alert.show("success","Thành công",2000);
+                    window.alert.show("success","完成",2000);
                     table.ajax.reload()
                 },
                 error: function () {
-                    window.alert.show("error","Thất bại",2000)
+                    window.alert.show("error","失敗",2000)
                 }
             })
         })
@@ -170,13 +170,13 @@ $(document).ready(function () {
             contentType: 'application/json',
             data: JSON.stringify(company),
             success: function () {
-                window.alert.show("success","Thành công",2000);
+                window.alert.show("success","完成",2000);
                 setInterval(function () {
                     location.reload();
                 },2000)
             },
             error: function () {
-                window.alert.show("error","Thất bại",2000)
+                window.alert.show("error","失敗",2000)
             }
         })
     })

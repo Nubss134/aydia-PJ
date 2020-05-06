@@ -101,12 +101,12 @@ $(document).ready(function(){
                 contentType: 'application/json; charset=utf-8',
                 data: JSON.stringify(home_item),
                 success: function(){
-                    window.alert.show("success", "done", 2000);
+                    window.alert.show("success", "完成", 2000);
                     location.reload();
 //                    console.log(home_item);
                 },
                 error: function(){
-                    window.alert.show("error", "That bai", 2000);
+                    window.alert.show("error", "失敗", 2000);
 
                 }
            })
@@ -150,11 +150,11 @@ $(document).ready(function(){
                 url: '/api/v1/home/delete?id=' + id,
                 type: 'POST',
                 success: function(){
-                    window.alert.show("Success", "Thanh cong", 2000);
+                    window.alert.show("success", "成功", 2000);
                     table.ajax.reload();
                 },
                 error: function(){
-                    window.alert.show("Error", "That bai", 2000);
+                    window.alert.show("error", "失敗", 2000);
                 }
             })
         })

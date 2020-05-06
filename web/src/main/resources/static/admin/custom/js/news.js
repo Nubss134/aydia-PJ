@@ -107,11 +107,11 @@ $(document).ready(function(){
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(news),
             success: function(){
-                window.alert.show("success", "DONE", 2000);
+                window.alert.show("success", "完成", 2000);
                   location.reload();
             },
             error: function(){
-                window.alert.show("error", "FAIL", 2000)
+                window.alert.show("error", "失敗", 2000)
             }
         })
         console.log(news);
@@ -156,11 +156,11 @@ $(document).ready(function(){
                 url: '/api/v1/news/delete?id='+id,
                 type: 'POST',
                 success: function(){
-                    window.alert.show("success", "DONE", 2000);
+                    window.alert.show("success", "完成", 2000);
                     table.ajax.reload()
                 },
                 error: function(){
-                    window.alert.show("error", "FAIL", 2000)
+                    window.alert.show("error", "失敗", 2000)
                 }
             })
         })
