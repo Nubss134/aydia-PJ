@@ -56,7 +56,7 @@ $(document).ready(function(){
 
     $(document).on('click', '.news-thumb', function(){
         let id = $(this).attr("id");
-        window.location.href = "http://localhost:8081/detail/news/?id="+id ;
+        window.location.href = "/detail/news/?id="+id ;
     });
 
 })

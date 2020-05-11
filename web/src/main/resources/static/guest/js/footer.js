@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-    fetch('/api/v1/news/getListRecent?id=' + 3)
+    fetch('/api/v1/news/getListRecent?id=' + 0)
            .then((response) => {
                return response.json();
            })

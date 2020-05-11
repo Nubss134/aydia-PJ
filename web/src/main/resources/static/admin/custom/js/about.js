@@ -43,7 +43,7 @@ $(document).ready(function(){
                     },
                     error: function(){
                        console.log("loi!");
-                       window.alert.show("error", "完成", 2000);
+                       window.alert.show("error", "失敗", 2000);
                     }
                 })
             }
