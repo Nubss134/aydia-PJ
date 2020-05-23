@@ -6,11 +6,10 @@ http://www.tooplate.com/view/2098-health
 
 */
 
-  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap');
   body {
     background: #ffffff;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     overflow-x: hidden;
   }
 
@@ -282,7 +281,14 @@ http://www.tooplate.com/view/2098-health
   /*---------------------------------------
       MENU              
   -----------------------------------------*/
-
+  .logo {
+    height: 50px;
+    width: 100px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    margin-top: -15px;
+  }
   header {
     background: #ffffff;
     border-bottom: 1px solid #f2f2f2;
@@ -320,7 +326,7 @@ http://www.tooplate.com/view/2098-health
   }
 
   header span i {
-    color: #a5c422;
+    color: #ffc55c;
     margin-right: 5px;
   }
 
@@ -871,7 +877,7 @@ http://www.tooplate.com/view/2098-health
   }
 
   #appointment button#cf-submit {
-    background: #a5c422;
+    background: #ffc55c;
     color: #ffffff;
     font-weight: 600;
     height: 55px;
