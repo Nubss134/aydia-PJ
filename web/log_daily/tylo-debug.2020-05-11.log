@@ -363,3 +363,80 @@ Caused by: org.springframework.data.mapping.PropertyReferenceException: No prope
 2020:05:11 22:08:34.763 [http-nio-8081-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log(173) - Initializing Spring DispatcherServlet 'dispatcherServlet' 
 2020:05:11 22:08:34.764 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean(525) - Initializing Servlet 'dispatcherServlet' 
 2020:05:11 22:08:34.779 [http-nio-8081-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean(547) - Completed initialization in 15 ms 
+2020:05:11 22:29:59.607 [restartedMain] INFO  com.project.web.WebApplication.logStarting(55) - Starting WebApplication on DESKTOP-OPKI8IN with PID 17668 (E:\Work\HARADA\web\aydia-PJ\web\target\classes started by admin in E:\Work\HARADA\web\aydia-PJ\web) 
+2020:05:11 22:29:59.640 [restartedMain] INFO  com.project.web.WebApplication.logStartupProfileInfo(651) - No active profile set, falling back to default profiles: default 
+2020:05:11 22:30:00.476 [restartedMain] INFO  o.s.b.d.restart.ChangeableUrls.logTo(225) - The Class-Path manifest attribute in C:\Users\admin\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.2\jaxb-runtime-2.3.2.jar referenced one or more files that do not exist: file:/C:/Users/admin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.xml.bind-api-2.3.2.jar,file:/C:/Users/admin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/txw2-2.3.2.jar,file:/C:/Users/admin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/istack-commons-runtime-3.0.8.jar,file:/C:/Users/admin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/stax-ex-1.8.1.jar,file:/C:/Users/admin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/FastInfoset-1.2.16.jar,file:/C:/Users/admin/.m2/repository/org/glassfish/jaxb/jaxb-runtime/2.3.2/jakarta.activation-api-1.2.1.jar 
+2020:05:11 22:30:00.477 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo(225) - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable 
+2020:05:11 22:30:00.478 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor.logTo(225) - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG' 
+2020:05:11 22:30:04.374 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(127) - Bootstrapping Spring Data JPA repositories in DEFAULT mode. 
+2020:05:11 22:30:04.634 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate.registerRepositoriesIn(187) - Finished Spring Data repository scanning in 234ms. Found 10 JPA repository interfaces. 
+2020:05:11 22:30:05.749 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization(330) - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying) 
+2020:05:11 22:30:06.661 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.initialize(92) - Tomcat initialized with port(s): 8081 (http) 
+2020:05:11 22:30:06.705 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log(173) - Initializing ProtocolHandler ["http-nio-8081"] 
+2020:05:11 22:30:06.707 [restartedMain] INFO  o.a.catalina.core.StandardService.log(173) - Starting service [Tomcat] 
+2020:05:11 22:30:06.708 [restartedMain] INFO  o.a.catalina.core.StandardEngine.log(173) - Starting Servlet engine: [Apache Tomcat/9.0.30] 
+2020:05:11 22:30:06.908 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log(173) - Initializing Spring embedded WebApplicationContext 
+2020:05:11 22:30:06.908 [restartedMain] INFO  o.s.web.context.ContextLoader.prepareWebApplicationContext(284) - Root WebApplicationContext: initialization completed in 6430 ms 
+2020:05:11 22:30:06.985 [restartedMain] INFO  c.p.w.f.GlobalExceptionHandlerFilter.init(49) - Init Catching exception filter. 
+2020:05:11 22:30:07.108 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection(110) - HikariPool-1 - Starting... 
+2020:05:11 22:30:07.117 [restartedMain] WARN  c.z.hikari.util.DriverDataSource.<init>(70) - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation. 
+2020:05:11 22:30:07.497 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource.getConnection(123) - HikariPool-1 - Start completed. 
+2020:05:11 22:30:10.845 [restartedMain] INFO  liquibase.executor.jvm.JdbcExecutor.info(42) - SELECT COUNT(*) FROM web_db.DATABASECHANGELOGLOCK 
+2020:05:11 22:30:10.868 [restartedMain] INFO  liquibase.executor.jvm.JdbcExecutor.info(42) - SELECT COUNT(*) FROM web_db.DATABASECHANGELOGLOCK 
+2020:05:11 22:30:10.873 [restartedMain] INFO  liquibase.executor.jvm.JdbcExecutor.info(42) - SELECT `LOCKED` FROM web_db.DATABASECHANGELOGLOCK WHERE ID=1 
+2020:05:11 22:30:10.931 [restartedMain] INFO  l.lockservice.StandardLockService.info(42) - Successfully acquired change log lock 
+2020:05:11 22:30:14.510 [restartedMain] INFO  liquibase.executor.jvm.JdbcExecutor.info(42) - SELECT MD5SUM FROM web_db.DATABASECHANGELOG WHERE MD5SUM IS NOT NULL LIMIT 1 
+2020:05:11 22:30:14.514 [restartedMain] INFO  liquibase.executor.jvm.JdbcExecutor.info(42) - SELECT COUNT(*) FROM web_db.DATABASECHANGELOG 
+2020:05:11 22:30:14.516 [restartedMain] INFO  l.c.StandardChangeLogHistoryService.info(42) - Reading from web_db.DATABASECHANGELOG 
+2020:05:11 22:30:14.516 [restartedMain] INFO  liquibase.executor.jvm.JdbcExecutor.info(42) - SELECT * FROM web_db.DATABASECHANGELOG ORDER BY DATEEXECUTED ASC, ORDEREXECUTED ASC 
+2020:05:11 22:30:14.604 [restartedMain] INFO  l.lockservice.StandardLockService.info(42) - Successfully released change log lock 
+2020:05:11 22:30:14.881 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation(31) - HHH000204: Processing PersistenceUnitInfo [name: default] 
+2020:05:11 22:30:15.125 [restartedMain] INFO  org.hibernate.Version.logVersion(46) - HHH000412: Hibernate Core {5.4.10.Final} 
+2020:05:11 22:30:15.406 [restartedMain] INFO  o.h.annotations.common.Version.<clinit>(49) - HCANN000001: Hibernate Commons Annotations {5.1.0.Final} 
+2020:05:11 22:30:15.635 [restartedMain] INFO  org.hibernate.dialect.Dialect.<init>(172) - HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect 
+2020:05:11 22:30:16.768 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator.initiateService(52) - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform] 
+2020:05:11 22:30:16.776 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory(416) - Initialized JPA EntityManagerFactory for persistence unit 'default' 
+2020:05:11 22:30:17.386 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration.openEntityManagerInViewInterceptor(220) - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning 
+2020:05:11 22:30:18.507 [restartedMain] INFO  c.p.web.security.SecurityConfig.configure(41) - Enable application security. 
+2020:05:11 22:30:18.520 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/libs/**'], [] 
+2020:05:11 22:30:18.521 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/custom/**'], [] 
+2020:05:11 22:30:18.521 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/js/**'], [] 
+2020:05:11 22:30:18.522 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/icon/**'], [] 
+2020:05:11 22:30:18.522 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/images/**'], [] 
+2020:05:11 22:30:18.522 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/favicon.ico/**'], [] 
+2020:05:11 22:30:18.523 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/webjars/springfox-swagger-ui/**'], [] 
+2020:05:11 22:30:18.523 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/swagger-ui.html/**'], [] 
+2020:05:11 22:30:18.524 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/swagger-resources/**'], [] 
+2020:05:11 22:30:18.524 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: Ant [pattern='/v1/api-docs'], [] 
+2020:05:11 22:30:18.582 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain.<init>(43) - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@37f7a2a5, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f6747f6, org.springframework.security.web.header.HeaderWriterFilter@1fafe51a, org.springframework.security.web.authentication.logout.LogoutFilter@6635bc45, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@1c574184, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@65db6133, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@29c3b018, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@118a8ebe, org.springframework.security.web.session.SessionManagementFilter@3ddbcb5d, org.springframework.security.web.access.ExceptionTranslationFilter@4a51014a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4dbf3daf] 
+2020:05:11 22:30:18.818 [restartedMain] INFO  o.s.s.c.ThreadPoolTaskExecutor.initialize(171) - Initializing ExecutorService 'applicationTaskExecutor' 
+2020:05:11 22:30:18.856 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer.startServer(58) - LiveReload server is running on port 35729 
+2020:05:11 22:30:21.388 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start(120) - Context refreshed 
+2020:05:11 22:30:21.426 [restartedMain] INFO  s.d.s.w.p.DocumentationPluginsBootstrapper.start(123) - Found 1 custom documentation plugin(s) 
+2020:05:11 22:30:21.444 [restartedMain] INFO  s.d.s.w.s.ApiListingReferenceScanner.scan(41) - Scanning for api listing references 
+2020:05:11 22:30:21.874 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getAllUsingGET_1 
+2020:05:11 22:30:21.882 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: saveUsingPOST_1 
+2020:05:11 22:30:21.948 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: saveUsingPOST_2 
+2020:05:11 22:30:21.960 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: saveOrUpdateUsingPOST_1 
+2020:05:11 22:30:21.980 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getUsingGET_1 
+2020:05:11 22:30:21.985 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: saveOrUpdateUsingPOST_2 
+2020:05:11 22:30:22.009 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getUsingGET_2 
+2020:05:11 22:30:22.021 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getListUsingGET_1 
+2020:05:11 22:30:22.033 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: saveUsingPOST_3 
+2020:05:11 22:30:22.055 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getUsingGET_3 
+2020:05:11 22:30:22.075 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getListUsingGET_2 
+2020:05:11 22:30:22.270 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getListUsingGET_3 
+2020:05:11 22:30:22.290 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: saveUsingPOST_4 
+2020:05:11 22:30:22.313 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getUsingGET_4 
+2020:05:11 22:30:22.317 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getListUsingGET_4 
+2020:05:11 22:30:22.331 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getListUsingGET_5 
+2020:05:11 22:30:22.339 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: saveUsingPOST_5 
+2020:05:11 22:30:22.357 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: changePasswordUsingGET_1 
+2020:05:11 22:30:22.366 [restartedMain] INFO  s.d.s.w.r.o.CachingOperationNameGenerator.startingWith(40) - Generating unique operation named: getUsingGET_5 
+2020:05:11 22:30:22.436 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol.log(173) - Starting ProtocolHandler ["http-nio-8081"] 
+2020:05:11 22:30:22.616 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer.start(204) - Tomcat started on port(s): 8081 (http) with context path '' 
+2020:05:11 22:30:22.623 [restartedMain] INFO  com.project.web.WebApplication.logStarted(61) - Started WebApplication in 25.795 seconds (JVM running for 27.848) 
+2020:05:11 22:30:30.476 [http-nio-8081-exec-7] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log(173) - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+2020:05:11 22:30:30.478 [http-nio-8081-exec-7] INFO  o.s.web.servlet.DispatcherServlet.initServletBean(525) - Initializing Servlet 'dispatcherServlet' 
+2020:05:11 22:30:30.497 [http-nio-8081-exec-7] INFO  o.s.web.servlet.DispatcherServlet.initServletBean(547) - Completed initialization in 18 ms 
+2020:05:11 22:30:31.067 [http-nio-8081-exec-7] WARN  o.a.c.util.SessionIdGeneratorBase.log(173) - Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [490] milliseconds. 

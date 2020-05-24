@@ -5,7 +5,7 @@ $(document).ready(function(){
                 '               <div class="col-md-offset-1 col-md-10" id="'+data.id+'">\n'+
                 '                   <h3>'+data.contentVi+'</h3>\n'+
                 '                   <h1 style="font-size:45px"><b>'+data.contentJpn+'</b></h1>\n' +
-                '                   <a href="#about" class="section-btn btn btn-default smoothScroll"><strong>詳しく見る</strong></a>\n' +
+                '                   <button href="#about" style="background-color = #ffc55c !important" class="section-btn btn btn-default smoothScroll"><strong>詳しく見る</strong></button>\n' +
                 '               </div>\n' +
                 '           </div>\n' +
                 '       </div>';
